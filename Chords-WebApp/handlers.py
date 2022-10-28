@@ -21,6 +21,8 @@ import requests
 # }
 
 
+
+  
 @dp.message_handler(Command('start'))
 async def start(message: Message):
 	await bot.send_message(message.chat.id,
