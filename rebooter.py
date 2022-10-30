@@ -1,6 +1,5 @@
 import os
 import subprocess
-import asyncio
 
 
 def main(dir_name: str):
@@ -11,7 +10,7 @@ def main(dir_name: str):
     dirs = os.listdir(dir_name)
 
     while 1:
-        print("again")
+
         for fname in dirs:
             if fname == "__pycache__":
                 continue
@@ -20,7 +19,7 @@ def main(dir_name: str):
 
             if last_mtime.get(fname):
                 if last_mtime.get(fname) < t:
-
+                    p.kill()
                     p = subprocess.Popen("python3 /Users/ilya/Documents/GitHub/Chords-WebApp/Chords-WebApp/bot.py",
                                          shell=True)
 
